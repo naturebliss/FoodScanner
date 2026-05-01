@@ -1,0 +1,8 @@
+[
+  {"code": "E621", "name": "Monosodium Glutamate", "status": "Restricted", "limit": "GMP", "details": "Not permitted in foods for infants < 12 months."},
+  {"code": "E102", "name": "Tartrazine", "status": "Caution", "limit": "100mg/kg", "details": "Mandatory warning: May have an adverse effect on activity and attention in children."},
+  {"code": "E211", "name": "Sodium Benzoate", "status": "Restricted", "limit": "200mg/kg", "details": "Often misused in milk/juice. Check for benzene formation with Vitamin C."},
+  {"code": "E110", "name": "Sunset Yellow FCF", "status": "Caution", "limit": "100mg/kg", "details": "Restricted in E.U. and specific Indian dairy categories."},
+  {"code": "INS 250", "name": "Sodium Nitrite", "status": "Dangerous", "limit": "150mg/kg", "details": "Strictly monitored in processed meats. Carcinogenic at high temp."},
+  {"code": "INS 950", "name": "Acesulfame Potassium", "status": "Restricted", "limit": "3000mg/kg", "details": "Artificial sweetener. Not for young children."}
+]

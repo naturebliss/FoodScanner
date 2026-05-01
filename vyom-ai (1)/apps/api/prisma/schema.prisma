@@ -1,0 +1,61 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String      @id @default(uuid())
+  email         String      @unique
+  password      String
+  role          Role        @default(USER)
+  createdAt     DateTime    @default(now())
+  scans         Scan[]
+  complaints    Complaint[]
+}
+
+enum Role {
+  USER
+  VENDOR
+  ADMIN
+  OFFICER
+}
+
+model Product {
+  id          String   @id @default(uuid())
+  barcode     String?  @unique
+  name        String
+  brand       String
+  category    String
+  riskScore   Int      @default(0)
+  ageSafety   Json
+  ingredients Json
+  updatedAt   DateTime @updatedAt
+  scans       Scan[]
+}
+
+model Scan {
+  id        String   @id @default(uuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id])
+  productId String
+  product   Product  @relation(fields: [productId], references: [id])
+  location  Json?    // { lat: float, lng: float, district: string }
+  createdAt DateTime @default(now())
+}
+
+model Complaint {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+  type        String   // FAKE_BRAND, HARMFUL_INGREDIENT, etc
+  description String
+  imageUrl    String?
+  location    Json
+  district    String
+  status      String   @default("PENDING") // PENDING, INVESTIGATING, RESOLVED, ESCALATED
+  createdAt   DateTime @default(now())
+}

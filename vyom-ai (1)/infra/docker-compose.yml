@@ -1,0 +1,50 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgis/postgis:16-3.4
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: vyom
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    ports:
+      - "6379:6379"
+
+  api:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.api
+    environment:
+      DATABASE_URL: postgresql://user:pass@postgres:5432/vyom?schema=public
+      REDIS_URL: redis://redis:6379
+      AI_URL: http://ai:8000
+    ports:
+      - "3001:3001"
+    depends_on:
+      - postgres
+      - redis
+
+  ai:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.ai
+    environment:
+      GROQ_API_KEY: ${GROQ_API_KEY}
+    ports:
+      - "8000:8000"
+
+  web:
+    build:
+      context: ..
+      dockerfile: infra/Dockerfile.web
+    environment:
+      API_URL: http://localhost:3001
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api

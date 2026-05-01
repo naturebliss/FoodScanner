@@ -1,0 +1,8 @@
+[
+  {"id": "caffeine", "adult": true, "teen": true, "child": false, "infant": false, "reason": "Caffeine content > 50mg exceeds pediatric safety guidelines."},
+  {"id": "alcohol", "adult": true, "teen": false, "child": false, "infant": false, "reason": "Ethyl alcohol content is neurotoxic for children and infants."},
+  {"id": "honey", "adult": true, "teen": true, "child": true, "infant": false, "reason": "Botulism risk for infants under 12 months."},
+  {"id": "tartrazine", "adult": true, "teen": true, "child": false, "infant": false, "reason": "Associated with hyperactivity and attention deficit in children."},
+  {"id": "retinol", "adult": true, "teen": true, "child": false, "infant": false, "reason": "Skincare active unsuitable for developing infant/child skin barriers."},
+  {"id": "melamine", "adult": false, "teen": false, "child": false, "infant": false, "reason": "Banned toxic substance (WADA/WHO)."}
+]
