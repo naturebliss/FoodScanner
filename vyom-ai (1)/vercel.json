@@ -1,7 +1,0 @@
-{
-  "name": "vyom-ai-web",
-  "framework": "nextjs",
-  "rewrites": [
-    { "source": "/api/v1/:path*", "destination": "https://your-api-url.railway.app/api/v1/:path*" }
-  ]
-}

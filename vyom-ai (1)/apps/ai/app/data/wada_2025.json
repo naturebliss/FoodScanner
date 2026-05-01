@@ -1,7 +1,0 @@
-[
-  {"id": "PROHIBITED_S1", "name": "Anabolic Agents", "category": "S1"},
-  {"id": "PROHIBITED_S2", "name": "Peptide Hormones", "category": "S2"},
-  {"id": "PROHIBITED_S3", "name": "Beta-2 Agonists", "category": "S3"},
-  {"id": "STIMULANT", "name": "Ephedrine", "limit": "10ug/ml", "category": "S6"},
-  {"id": "STIMULANT", "name": "Cocaine", "category": "S6"}
-]
