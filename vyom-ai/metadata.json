@@ -1,0 +1,6 @@
+{
+  "name": "VYOM-AI",
+  "description": "AI-Powered Product Safety Intelligence Platform for Food, Skincare, Supplements, and Brand Authenticity.",
+  "requestFramePermissions": ["camera", "geolocation"],
+  "majorCapabilities": ["AI Analysis", "Barcode Scanning", "Real-time Safety Alerts", "GIS Heatmaps"]
+}
